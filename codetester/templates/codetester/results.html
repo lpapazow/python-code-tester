@@ -1,0 +1,10 @@
+{% if code_text %}
+<h2 class="text-white mb-5">Your code was:</h2>
+<textarea output="outputText" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" rows=20 cols=80 wrap=on readonly>{{ code_text }}</textarea>
+
+
+<h2 class="text-white mb-5">Results are:</h2>
+<textarea output="outputText" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" rows=10 cols=80 wrap=on readonly></textarea>
+{% endif %}
+</br>
+<a href="{% url 'codetester:index' %}">Back to the start</a>

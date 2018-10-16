@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<div class="container">
+	<div class="row">
+	  <div class="col-md-10 col-lg-8 mx-auto text-center">
+
+		<h2 class="text-white mb-5">Python Tasks Automated Testing</h2>
+
+		<form class="form-inline d-flex" action="{% url 'codetester:results' next_submission_id|default:'1' %}" method="post">
+		  {% csrf_token %}
+		  <div class="row">
+			<textarea style="resize:none"rows=20 cols=80 wrap=on type="text" name="code_text" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="input" placeholder="Enter code here..." ></textarea>
+			
+			<br/>
+			<br/>
+			<div class="form-group">
+				<label for="sel1">Select coding task: </label>
+				<select class="form-control" name="code_day">
+				  <option value="w1t1">Week01-1-First-Steps-In-Python</option>
+				  <option value="w1t2">Week01-2-Dive-Into-Python</option>
+				  <option value="w1t3">Week01-3-Final-Round</option>
+				  <option value="w1t4">Week01-Extra-Tasks</option>
+				  <option value="w2t3">Week02-03-Sudoku</option>
+				</select>
+			</div>
+			
+		  </div>
+		  <br/>
+		  <div class="row">
+			<input type="submit" class="btn btn-primary mx-auto" value="submit" />
+		  </div>
+		</form>
+	  </div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-10 col-lg-8 mx-auto text-center">
+		<h2 class="text-white mb-5">Previous submissions</h2>
+		{% if latest_submission_list %}
+			<ul class="list-group">
+			{% for submission in latest_submission_list %}
+				<li class="list-group-item list-group-item-secondary"><a href="/codetester/{{ submission.id }}/results">{{ submission.score }}% passed on {{ submission.pub_date }}</a></li>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<p>No submissions are available.</p>
+		{% endif %}
+		</div>
+	</div>
+</div>
+</html>
