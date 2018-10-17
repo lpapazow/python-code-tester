@@ -25,7 +25,7 @@ SECRET_KEY = '0lmq8n3mv8mgr5*_6u5@_emx&2vrxko7466$m9j!e@*$7)eu)s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rocky-tor-94646.herokuapp.com']
 
 
 # Application definition
