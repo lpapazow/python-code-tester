@@ -25,7 +25,7 @@ SECRET_KEY = '0lmq8n3mv8mgr5*_6u5@_emx&2vrxko7466$m9j!e@*$7)eu)s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rocky-tor-94646.herokuapp.com']
+ALLOWED_HOSTS = ['rocky-tor-94646.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -106,11 +106,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Sofia'
+
+DATETIME_FORMAT = 'N j, Y, H:m:s'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
