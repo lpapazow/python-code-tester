@@ -108,7 +108,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Europe/Sofia'
 
-DATETIME_FORMAT = 'N j, Y, H:m:s'
+DATETIME_FORMAT = 'N j, Y, H:i:s'
 
 USE_I18N = True
 
